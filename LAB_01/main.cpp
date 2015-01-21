@@ -5,10 +5,10 @@
 #include "OGRE/OgreConfigFile.h"
 #include "OGRE/OgreEntity.h"
 
-int main(){
-	Ogre::Root* root = new Ogre::Root("..\\LabFiles\\OgreConfig\\plugins_d.cfg");
+int main() {
+	Ogre::Root* root = new Ogre::Root("../LabFiles/OgreConfig/plugins_d.cfg", "../LabFiles/OgreConfig/ogre.cfg");
 
-	if(!root->showConfigDialog()){
+	if (!root->showConfigDialog()) {
 		return -1;
 	}
 
@@ -26,22 +26,16 @@ int main(){
 
 	camera->setAspectRatio(Ogre::Real(viewport->getActualWidth()) / Ogre::Real(viewport->getActualHeight()));
 
-	//Ogre::ResourceGroupManager::getSingleton().addResourceLocation("C:/OgreSDK/OgreSDK_vc10_v1-9-0/media/packs/Sinbad.zip", "Zip");
-	
-	
-	Ogre::ConfigFile cf;
-	//cf.load("..\\..\\LabFiles\\OgreConfig\\resources_d.cfg");
-	
-	cf.load("../LabFiles/OgreConfig/resources_t.cfg");
-	Ogre::ConfigFile::SectionIterator sectionIter = cf.getSectionIterator();
 	Ogre::String sectionName, typeName, dataName;
-	
-	while(sectionIter.hasMoreElements()){
+	Ogre::ConfigFile cf;
+	cf.load("../LabFiles/OgreConfig/resources_d.cfg");
+	Ogre::ConfigFile::SectionIterator sectionIter = cf.getSectionIterator();
+
+	while (sectionIter.hasMoreElements()) {
 		sectionName = sectionIter.peekNextKey();
 		Ogre::ConfigFile::SettingsMultiMap *settings = sectionIter.getNext();
 		Ogre::ConfigFile::SettingsMultiMap::iterator i;
-
-		for(i = settings->begin(); i != settings->end(); ++i){
+		for (i = settings->begin(); i != settings->end(); ++i) {
 			typeName = i->first;
 			dataName = i->second;
 			Ogre::ResourceGroupManager::getSingleton().addResourceLocation(dataName, typeName, sectionName);
@@ -49,11 +43,11 @@ int main(){
 	}
 
 	Ogre::ResourceGroupManager::getSingleton().initialiseAllResourceGroups();
-	
+
 	Ogre::Entity* ent = sceneManager->createEntity("Sinbad.mesh");
 	sceneManager->getRootSceneNode()->attachObject(ent);
 
-	sceneManager->setAmbientLight(Ogre::ColourValue(.3f,.3f,.3f));
+	sceneManager->setAmbientLight(Ogre::ColourValue(.3f, .3f, .3f));
 
 	root->startRendering();
 
