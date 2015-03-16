@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Quickstart2010.Modules
+namespace Effecter.Modules
 {
   /************************************************************************/
   /* base class for program states                                        */

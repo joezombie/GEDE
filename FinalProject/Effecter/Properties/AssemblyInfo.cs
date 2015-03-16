@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle( "Quickstart2010" )]
+[assembly: AssemblyTitle("Effecter")]
 [assembly: AssemblyDescription( "Quickstart project for Mogre/.NET4" )]
 [assembly: AssemblyConfiguration( "" )]
 [assembly: AssemblyCompany( "Mogre" )]
-[assembly: AssemblyProduct( "Quickstart 2010" )]
+[assembly: AssemblyProduct("Effecter")]
 [assembly: AssemblyCopyright( "public domain" )]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]

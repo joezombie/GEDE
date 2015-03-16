@@ -8,8 +8,8 @@
     <ProjectGuid>{6A286245-E004-447F-A3B2-4E62472653F0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Quickstart2010</RootNamespace>
-    <AssemblyName>Quickstart2010</AssemblyName>
+    <RootNamespace>Effecter</RootNamespace>
+    <AssemblyName>Effecter</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -56,6 +56,7 @@
     <Compile Include="Modules\StateManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="States\TestState.cs" />
     <Compile Include="States\TurningHead.cs" />
   </ItemGroup>
   <ItemGroup />

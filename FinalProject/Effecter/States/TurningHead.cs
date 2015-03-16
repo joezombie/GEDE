@@ -2,9 +2,9 @@
 
 using Mogre;
 
-using Quickstart2010.Modules;
+using Effecter.Modules;
 
-namespace Quickstart2010.States
+namespace Effecter.States
 {
   /************************************************************************/
   /* program state that just shows a turning ogre head                    */

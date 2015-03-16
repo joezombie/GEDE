@@ -2,10 +2,10 @@
 
 using Mogre;
 
-using Quickstart2010.Modules;
-using Quickstart2010.States;
+using Effecter.Modules;
+using Effecter.States;
 
-namespace Quickstart2010
+namespace Effecter
 {
   public class Program
   {
@@ -33,7 +33,7 @@ namespace Quickstart2010
       Program prg = new Program();
 
       // try to initialize Ogre and the state manager
-      if( mEngine.Startup() && mStateMgr.Startup( typeof( TurningHead ) ) )
+      if( mEngine.Startup() && mStateMgr.Startup( typeof( TestState ) ) )
       {
         // create objects in scene
         prg.CreateScene();
@@ -73,8 +73,16 @@ namespace Quickstart2010
     /************************************************************************/
     public void CreateScene()
     {
+
+        // Create the plane
+        Plane plane = new Plane(Vector3.UNIT_Y, 0);
+        MeshManager.Singleton.CreatePlane("ground", ResourceGroupManager.DEFAULT_RESOURCE_GROUP_NAME, plane, 1500, 1500, 20, 20, true, 1, 5, 5, Vector3.UNIT_Z);
+        Entity groundEnt = mEngine.SceneMgr.CreateEntity("GroundEntity", "ground");
+        mEngine.SceneMgr.RootSceneNode.CreateChildSceneNode().AttachObject(groundEnt);
+        //groundEnt.SetMaterialName("Examples/Rockwall");
+
       // set a dark ambient light
-      mEngine.SceneMgr.AmbientLight = new ColourValue( 0.1f, 0.1f, 0.1f );
+      mEngine.SceneMgr.AmbientLight = new ColourValue( 0.6f, 0.6f, 0.6f);
 
       // place the camera to a better position
       mEngine.Camera.Position = new Vector3( 0.0f, 25.0f, 100.0f );

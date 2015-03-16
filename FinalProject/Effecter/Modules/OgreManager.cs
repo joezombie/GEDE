@@ -4,7 +4,7 @@ using System.IO;
 
 using Mogre;
 
-namespace Quickstart2010.Modules
+namespace Effecter.Modules
 {
   /************************************************************************/
   /* ogre manager                                                         */
