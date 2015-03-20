@@ -6,6 +6,9 @@
 *.user
 *.sln.docstates
 
+# VirtualEnv
+venv/
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
